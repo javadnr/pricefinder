@@ -12,7 +12,7 @@ class NobitexScraper(BaseScraper):
             response = self._post(url, json=payload)
             response.raise_for_status()
             data = response.json()
-            price = float(data['stats'][f"{symbol.lower()}_rls"]['latest'])
+            price = float(data['stats'][f"{symbol.lower()}-{dstCurrency}"]['bestBuy'])
             return price
         except Exception as e:
             raise ScraperException(f"Nobitex scraping failed: {e}")
@@ -27,7 +27,7 @@ class NobitexScraper(BaseScraper):
             response = await self._apost(url, json=payload)
             response.raise_for_status()
             data = response.json()
-            price = float(data['stats'][f"{symbol.lower()}_rls"]['latest'])
+            price = float(data['stats'][f"{symbol.lower()}-{dstCurrency}"]['bestBuy'])
             return price
         except Exception as e:
             raise ScraperException(f"Async Nobitex scraping failed: {e}")
