@@ -1,5 +1,5 @@
-from ..req_handler import RequestHandler
-from ..exceptions import GetPriceException
+from ..cores.req_handler import RequestHandler
+from ..cores.exceptions import GetPriceException
 
 class Nobitex(RequestHandler):
     def get_price(self, symbol: str = "btc", dst_currency: str = "usdt") -> float:
