@@ -27,7 +27,7 @@ class RequestHandler:
                 "http://": self.proxy,
                 "https://": self.proxy,
             }
-        async with httpx.AsyncClient(proxies=proxies, timeout=self.timeout) as client:
+        async with httpx.AsyncClient(proxy=proxies, timeout=self.timeout) as client:
             return await client.get(url, params=params)
 
     async def _apost(self, url: str, json: dict = None):
@@ -37,5 +37,5 @@ class RequestHandler:
                 "http://": self.proxy,
                 "https://": self.proxy,
             }
-        async with httpx.AsyncClient(proxies=proxies, timeout=self.timeout) as client:
+        async with httpx.AsyncClient(proxy=proxies, timeout=self.timeout) as client:
             return await client.post(url, json=json)
