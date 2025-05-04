@@ -4,7 +4,7 @@ from ..cores.exceptions import GetPriceException
 class Nobitex(RequestHandler):
     def get_price(self, symbol: str = "btc", dst_currency: str = "usdt") -> float:
         """
-        Synchronous price fetch
+        Synchronous fetch
         """
         try:
             url = "https://api.nobitex.ir/market/stats"
@@ -19,7 +19,7 @@ class Nobitex(RequestHandler):
 
     async def aget_price(self, symbol: str = "btc", dst_currency: str = "usdt") -> float:
         """
-        Asynchronous price fetch
+        Asynchronous fetch
         """
         try:
             url = "https://api.nobitex.ir/market/stats"
