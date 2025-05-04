@@ -1,7 +1,7 @@
 import requests
 import httpx
 
-class BaseScraper:
+class RequestHandler:
     """Returns a requests session object for sync requests or send request with httpx for async requests"""
     def __init__(self, proxy: str = None, timeout: int = 10):
         self.session = requests.Session()

@@ -1,4 +1,4 @@
-class ScraperException(Exception):
+class GetPriceException(Exception):
     """Custom exception raised for errors during scraping operations."""
     def __init__(self, message: str, source: str = None):
         self.source = source
